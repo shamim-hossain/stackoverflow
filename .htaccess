@@ -1,0 +1,14 @@
+Options -Indexes
+
+<Files ~ "^(.*)\.(inc|tpl|sql)$">
+  Order deny,allow
+  Deny from all
+</Files>
+
+AddDefaultCharset UTF-8
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /stackoverflow/index.php/$1 [L]
